@@ -6,11 +6,41 @@
 const CIPHER_METHOD = 'AES-256-CBC';
 
 function key_encrypt($string, $key, $cipher_method=CIPHER_METHOD) {
-  return "D4RK SH4D0W RUL3Z";
+
+  // Pad string to min length
+  $key = str_pad($key, 32, '*');
+
+  // Create random initializatin vector
+  $iv_length = openssl_cipher_iv_length(CIPHER_METHOD);
+  $iv = openssl_random_pseudo_bytes($iv_length);
+
+  // Encrypt
+  $encrypted = openssl_encrypt($string, CIPHER_METHOD, $key,OPENSSL_RAW_DATA, $iv);
+
+  // Save $iv for decoding
+  $message = $iv . $encrypted;
+  
+  // Encode to make sure encryted characters are viewable
+  return base64_encode($message);
 }
 
 function key_decrypt($string, $key, $cipher_method=CIPHER_METHOD) {
-  return "PWNED YOU!";
+  
+  // Pad key to min length
+  $key = str_pad($key, 32, '*');
+
+  // Create intialization vector
+  $iv_with_ciphertext = base64_decode($string);
+  $iv_length = openssl_cipher_iv_length(CIPHER_METHOD);
+  $iv = substr($iv_with_ciphertext, 0, $iv_length);
+
+  // Get cipher
+  $ciphertext = substr($iv_with_ciphertext, $iv_length);
+
+  // Decrypt using cypher and iv
+  $plaintext = openssl_decrypt($ciphertext, CIPHER_METHOD, $key, OPENSSL_RAW_DATA, $iv);
+
+  return $plaintext;
 }
 
 
