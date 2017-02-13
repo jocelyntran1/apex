@@ -1,6 +1,3 @@
-CREATE DATABASE apex;
-USE apex;
-
 CREATE TABLE agents (
   id INT(11) NOT NULL AUTO_INCREMENT,
   codename VARCHAR(255),
