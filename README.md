@@ -1,6 +1,6 @@
 # Project 5 - Encryption
 
-Time spent: **X** hours spent in total
+Time spent: **5** hours spent in total
 
 ## User Stories
 
@@ -29,22 +29,28 @@ The following **required** functionality is completed:
   * [x]  Required: Decrypt the message:
   Cannot access APEX from this location. Send new agent codename and public key so I can contact. Encrypt response to protect codename. Include signature to verify identity and message integrity. -- sydneybristow
   * [x]  Required: Verify the message
-  * [ ]  Required: Include a response message in this README:
+  * [x]  Required: Include a response message in this README:
   a0JCBN8zsiRHoRWHbPzoUbKjcD2Hfzfo+sMLaAegSS7hb545Ji1SwdtqYTrU24dEdhR7fPywvD2dORsE1nsOR7QzaHFrJqD3mST7IiCNkA4IYcllZTwWLIEBSmQOnvjZuyQQ9e/0srjc9eM869oMZB11dNPtrNRWCFuQQsKQAfS/AO8O/Bal3DThXDbs71hWQm8I4NaFb0SC82BDAg+3eLlnyJlm6PmHSKG442ea2kEF+PHupAjuyMXYEKJb0tUZybzmjbzHp4A2l/OnA++xNsD8attqT76V8voxb5vSZFUhVE9AhA0MAV8klgKQjps2g8ljfx3LXYfqrFT+PthXEg==
 
   Signature:
   my4tEV0zLNeyFpYdSV+H1b1+ttXdMoO3yoS8bHlO6/k2ao3KICp/G3ahJASCTV9OpxJmV2PC4JmT2i0hOCDRMIi2vyXmdrWujbgWD1Hy/k7fXjsvISoQpWfSd4j+WAPN8KidMniAEwaPR/4ARn2OZQjxkyDqHkqrKTUwr5s3hcjjn8xGVTzwWPf3S8nBZ5ALqIRNgeaIXjxDMKLdSdctfqkm8qHUKzN+pFDtNeNxsjZa43pZ9H+gU2C9Zn4rq/+THETw6dNU/m3du9Oxh2x4QWdwhWjgNy/H9cvHvk0NGt9h6/HFPjbtSZDcrSJHFRusGG8bV1BEAZIkuXxh4j0qAg==
 
 7\. Agent Messages
-  * [ ]  Required: Repair the dropbox code
-  * [ ]  Required: Repair the messages area
-  * [ ]  Required: Display encrypted messages for all agents
-  * [ ]  Required: Messages indicate whether the message signature is valid
-  * [ ]  Required: Your messages are automatically decrypted
+  * [x]  Required: Repair the dropbox code
+  * [x]  Required: Repair the messages area
+  * [x]  Required: Display encrypted messages for all agents
+  * [x]  Required: Messages indicate whether the message signature is valid
+  * [x]  Required: Your messages are automatically decrypted
 
 8\. Identify the Double Agent
-  * [ ]  Required: Decrypt as many email messages as possible
-  * [ ]  Required: Identify the double agent: ____________________
+  * [x]  Required: Decrypt as many email messages as possible:
+  Email 1: The SQL injection we discussed is in place. Just search for an agent.
+  Email 2: 
+  Email 3: Today I was able to sneak several XSS vulnerabilities onto one of the encrypt/decrypt pages.
+  Email 4:
+  Email 5: Let me know before you go inside. I'll create a distraction. - Austin
+  Email 6: Let me know before you go inside. I'll create a distraction. - Natasha
+  * [x]  Required: Identify the double agent: Natasha - The fifth email had an invalid signature.
 
 The following objectives are **optional**:
 
@@ -66,7 +72,7 @@ The following objectives are **optional**:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/JVtsmqY.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Peek](https://github.com/phw/peek/releases).
 
