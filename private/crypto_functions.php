@@ -69,24 +69,42 @@ function generate_keys($config=PUBLIC_KEY_CONFIG) {
 }
 
 function pkey_encrypt($string, $public_key) {
-  return 'Qnex Funqbj jvyy or jngpuvat lbh';
+
+  // Encrypt string
+  openssl_public_encrypt($string, $encrypted, $public_key);
+
+  // Use base64_encode to make contents viewable/sharable
+  $message = base64_encode($encrypted);
+
+  return $message;
 }
 
 function pkey_decrypt($string, $private_key) {
-  return 'Alc evi csy pssomrk livi alir csy wlsyph fi wezmrk ETIB?';
+
+  // Decode from base64 to get raw data
+  $ciphertext = base64_decode($string);
+  
+  openssl_private_decrypt($ciphertext, $decrypted, $private_key);
+
+  return $decrypted;
 }
 
 
 // Digital signatures using public/private keys
 
 function create_signature($data, $private_key) {
-  // A-Za-z : ykMwnXKRVqheCFaxsSNDEOfzgTpYroJBmdIPitGbQUAcZuLjvlWH
-  return 'RpjJ WQL BImLcJo QLu dQv vJ oIo Iu WJu?';
+   openssl_sign($data, $raw_signature, $private_key);
+  
+  // Use base64_encode to make contents viewable/sharable
+  $signature = base64_encode($raw_signature);
+
+  return $signature;
 }
 
 function verify_signature($data, $signature, $public_key) {
-  // Vigenère
-  return 'RK, pym oays onicvr. Iuw bkzhvbw uedf pke conll rt ZV nzxbhz.';
+  $raw_signature = base64_decode($signature);
+  $result = openssl_verify($data, $raw_signature, $public_key);
+  return $result;
 }
 
 ?>
